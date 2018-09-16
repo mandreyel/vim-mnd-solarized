@@ -174,11 +174,11 @@ call <sid>hi('Folded', s:grey_green, s:md_green, s:italic, '')
 call <sid>hi('CursorColumn', '', s:md_green, '', '')
 call <sid>hi('CursorLine', '', s:md_green, 'NONE', '')
 call <sid>hi('CursorLineNR', s:dk_green, s:dk_green, '', '')
-call <sid>hi('CursorLineNr', s:grey_green, s:md_green, '', '')
+call <sid>hi('CursorLineNr', s:solarized_white, s:md_green, '', '')
 
 " Search
 call <sid>hi('Search', s:teal, s:md_green, s:bold, '')
-call <sid>hi('IncSearch', s:orange, s:md_green, s:bold, '')
+call <sid>hi('IncSearch', s:pink, s:md_green, s:bold, '')
 
 " Tabs
 call <sid>hi('TabLine', s:grey_green, s:md_green, '', '')
@@ -204,7 +204,7 @@ call <sid>hi('Include', s:teal, '', '', '')
 call <sid>hi('Keyword', s:purple, '', '', '')
 call <sid>hi('Label', s:purple, '', '', '')
 call <sid>hi('Number', s:orange, '', '', '')
-call <sid>hi('Operator', s:orange, '', '', '')
+call <sid>hi('Operator', s:magenta, '', '', '')
 call <sid>hi('PreProc', s:blue_green, '', '', '')
 call <sid>hi('Repeat', s:purple, '', '', '')
 call <sid>hi('Special', s:blue_green, '', '', '')
