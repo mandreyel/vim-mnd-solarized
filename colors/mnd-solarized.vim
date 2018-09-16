@@ -85,14 +85,14 @@ let s:blue_green=['#2592ad', '114']
 
 "let s:blue=s:blue_green
 
+let s:dk_orange=['#cb4b16', '21']
+let s:orange=['#b58900', '21']
+
 let s:purple=['#6c71c4', '21']
 let s:purple=s:dk_orange
 let s:purple=s:orange
 let s:magenta=['#c12f6e', '21']
 let s:pink=['#d33682', '21']
-
-let s:dk_orange=['#cb4b16', '21']
-let s:orange=['#b58900', '21']
 
 let s:lighter_grey_green=['#657b83', '08']
 let s:grey=['#839496', '20']
