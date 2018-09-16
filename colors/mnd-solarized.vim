@@ -1,7 +1,6 @@
 " =============================================================== 
 " Project: Mnd Solarized 
- "Repository:
- "
+" Repository: https://github.com/mandreyel/vim-mnd-solarized 
 " License: MIT
 " ===============================================================
 
@@ -74,33 +73,29 @@ let s:solarized_white=['#93a1a1', '203']
 
 let s:dk_green=['#002b36', '00']
 let s:md_green=['#073642', '18']
-
 let s:grey_green=['#586e75', '19']
+let s:rotten_green=['#859900', '21']
 
 let s:teal=['#2aa198', '21']
 let s:blue=['#268bd2', '21']
+let s:dk_blue_green=['#218299', '114'] " darker: 22869e, even darker: 005970
+let s:dk_blue_green=['#207f96', '114'] " slightly lighter than above
+let s:blue_green=['#2592ad', '114']
+"let s:l_blue_green=['#1c6e82', '114']
+
+let s:blue=s:blue_green
+
 let s:purple=['#6c71c4', '21']
-let s:dk_blue_green=['#207f96', '114'] " darker: 22869e, even darker: 005970
-let s:blue_green=['#28a0bd', '114']
-let s:l_blue_green=['#1c6e82', '114']
+let s:pink=['#d33682', '21']
 
 let s:dk_orange=['#cb4b16', '21']
 let s:orange=['#b58900', '21']
 
 let s:lighter_grey_green=['#657b83', '08']
 let s:grey=['#839496', '20']
-let s:rotten_green=['#859900', '21']
-let s:pink=['#d33682', '21']
 
 " indigo colors
 let s:indigo=['#252c37', '235']
-
-" nord colors
-let s:nord_yellow=['#ebcb8b', '221']
-let s:nord_red=['#bf616a', '176']
-let s:nord_dark_red=['#9d5057', '221']
-
-let s:brown=['#805a4d', '137']
 
 let s:white=['#ffffff', '15']
 let s:none=['NONE', 'NONE']
@@ -134,8 +129,8 @@ endfunction
 call <sid>hi('Bold', '', '', 'bold', '')
 call <sid>hi('Debug', s:solarized_white, '', '', '')
 call <sid>hi('Directory', s:blue, '', '', '')
-call <sid>hi('Error', s:nord_red, s:dk_green, '', '')
-call <sid>hi('ErrorMsg', s:nord_red, s:dk_green, '', '')
+call <sid>hi('Error', s:dk_orange, s:dk_green, '', '')
+call <sid>hi('ErrorMsg', s:dk_orange, s:dk_green, '', '')
 call <sid>hi('Exception', s:orange, '', '', '')
 call <sid>hi('Italic', '', '', s:italic, '')
 
@@ -187,8 +182,8 @@ call <sid>hi('TabLine', s:grey_green, s:md_green, '', '')
 call <sid>hi('TabLineFill', s:md_green, s:md_green, '', '')
 call <sid>hi('TabLineSel', s:solarized_white, s:md_green, '', '')
 
-call <sid>hi('helpExample', s:nord_yellow, '', '', '')
-call <sid>hi('helpCommand', s:nord_yellow, '', '', '')
+call <sid>hi('helpExample', s:orange, '', '', '')
+call <sid>hi('helpCommand', s:orange, '', '', '')
 
 " Standard syntax highlighting
 call <sid>hi('Boolean', s:orange, '', '', '')
@@ -198,15 +193,15 @@ call <sid>hi('SpecialComment', s:dk_blue_green, '', s:italic, '')
 call <sid>hi('Conditional', s:purple, '', '', '')
 call <sid>hi('Constant', s:orange, '', '', '')
 call <sid>hi('Define', s:blue, '', '', '')
-call <sid>hi('Delimiter', s:brown, '', '', '')
+call <sid>hi('Delimiter', s:orange, '', '', '')
 call <sid>hi('Float', s:orange, '', '', '')
 call <sid>hi('Function', s:teal, '', '', '')
 call <sid>hi('Identifier', s:solarized_white, '', '', '')
-call <sid>hi('Include', s:blue, '', '', '')
+call <sid>hi('Include', s:teal, '', '', '')
 call <sid>hi('Keyword', s:purple, '', '', '')
 call <sid>hi('Label', s:purple, '', '', '')
 call <sid>hi('Number', s:orange, '', '', '')
-call <sid>hi('Operator', s:purple, '', '', '')
+call <sid>hi('Operator', s:orange, '', '', '')
 call <sid>hi('PreProc', s:blue_green, '', '', '')
 call <sid>hi('Repeat', s:purple, '', '', '')
 call <sid>hi('Special', s:blue_green, '', '', '')
@@ -245,6 +240,8 @@ call <sid>hi('cppRawString', s:purple, '', '', '')
 
 " Rust
 call <sid>hi('rustStorage', s:orange, '', '', '')
+call <sid>hi('rustSelf', s:blue_green, '', '', '')
+call <sid>hi('rustEnumVariant', s:blue_green, '', '', '')
 
 " CSS
 call <sid>hi('csClass', s:orange, '', '', '')
@@ -299,19 +296,19 @@ call <sid>hi('markdownCode', s:blue_green, '', '', '')
 call <sid>hi('markdownCodeBlock', s:blue_green, '', '', '')
 call <sid>hi('markdownHeadingDelimiter', s:blue, '', '', '')
 call <sid>hi('markdownItalic', s:purple, '', s:italic, '')
-call <sid>hi('markdownBold', s:nord_yellow, '', s:bold, '')
-call <sid>hi('markdownCodeDelimiter', s:brown, '', s:italic, '')
+call <sid>hi('markdownBold', s:orange, '', s:bold, '')
+call <sid>hi('markdownCodeDelimiter', s:orange, '', s:italic, '')
 call <sid>hi('markdownError', s:grey, s:dk_green, '', '')
 
 call <sid>hi('NeomakeErrorSign', s:solarized_white, s:dk_green, '', '')
-call <sid>hi('NeomakeWarningSign', s:nord_yellow, s:dk_green, '', '')
+call <sid>hi('NeomakeWarningSign', s:orange, s:dk_green, '', '')
 call <sid>hi('NeomakeInfoSign', s:white, s:dk_green, '', '')
 call <sid>hi('NeomakeError', s:solarized_white, '', 'undercurl', s:solarized_white)
 call <sid>hi('NeomakeWarning', s:solarized_white, '', 'undercurl', s:solarized_white)
 
 " ALE
 call <sid>hi('ALEErrorSign', s:orange, s:dk_green, s:bold, '')
-call <sid>hi('ALEWarningSign', s:nord_yellow, s:dk_green, s:bold, '')
+call <sid>hi('ALEWarningSign', s:orange, s:dk_green, s:bold, '')
 call <sid>hi('ALEInfoSign', s:white, s:dk_green, s:bold, '')
 
 " NERDTree
@@ -329,11 +326,11 @@ call <sid>hi('pythonRepeat', s:purple, '', '', '')
 call <sid>hi('pythonOperator', s:purple, '', '', '')
 
 " Ruby
-call <sid>hi('rubyConstant', s:nord_yellow, '', '', '')
+call <sid>hi('rubyConstant', s:orange, '', '', '')
 call <sid>hi('rubySymbol', s:blue_green, '', '', '')
 call <sid>hi('rubyAttribute', s:blue, '', '', '')
 call <sid>hi('rubyInterpolation', s:blue_green, '', '', '')
-call <sid>hi('rubyInterpolationDelimiter', s:brown, '', '', '')
+call <sid>hi('rubyInterpolationDelimiter', s:orange, '', '', '')
 call <sid>hi('rubyStringDelimiter', s:blue_green, '', '', '')
 call <sid>hi('rubyRegexp', s:teal, '', '', '')
 
@@ -369,8 +366,8 @@ let g:terminal_color_9=s:solarized_white[0]
 let g:terminal_color_2=s:blue_green[0]
 let g:terminal_color_10=s:blue_green[0]
 
-let g:terminal_color_3=s:nord_yellow[0]
-let g:terminal_color_11=s:nord_yellow[0]
+let g:terminal_color_3=s:orange[0]
+let g:terminal_color_11=s:orange[0]
 
 let g:terminal_color_4=s:blue[0]
 let g:terminal_color_12=s:blue[0]
