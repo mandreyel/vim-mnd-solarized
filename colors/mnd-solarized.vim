@@ -83,9 +83,12 @@ let s:dk_blue_green=['#207f96', '114'] " slightly lighter than above
 let s:blue_green=['#2592ad', '114']
 "let s:l_blue_green=['#1c6e82', '114']
 
-let s:blue=s:blue_green
+"let s:blue=s:blue_green
 
 let s:purple=['#6c71c4', '21']
+let s:purple=s:dk_orange
+let s:purple=s:orange
+let s:magenta=['#c12f6e', '21']
 let s:pink=['#d33682', '21']
 
 let s:dk_orange=['#cb4b16', '21']
@@ -134,7 +137,7 @@ call <sid>hi('ErrorMsg', s:dk_orange, s:dk_green, '', '')
 call <sid>hi('Exception', s:orange, '', '', '')
 call <sid>hi('Italic', '', '', s:italic, '')
 
-call <sid>hi('Macro', s:blue, '', '', '')
+call <sid>hi('Macro', s:teal, '', '', '')
 call <sid>hi('MatchParen', s:orange, s:dk_green, '', '')
 call <sid>hi('ModeMsg', s:blue_green, '', '', '')
 call <sid>hi('MoreMsg', s:blue_green, '', '', '')
@@ -151,7 +154,7 @@ call <sid>hi('Underlined', s:solarized_white, '', '', '')
 call <sid>hi('Visual', '', s:md_green, '', '')
 call <sid>hi('VisualNOS', s:solarized_white, '', '', '')
 call <sid>hi('WarningMsg', s:solarized_white, '', '', '')
-call <sid>hi('WildMenu', s:white, s:blue, s:bold, '')
+call <sid>hi('WildMenu', s:teal, s:md_green, s:bold, '')
 call <sid>hi('Title', s:blue, '', '', '')
 call <sid>hi('Conceal', s:blue, s:dk_green, '', '')
 call <sid>hi('Cursor', s:dk_green, s:grey, '', '')
@@ -240,8 +243,8 @@ call <sid>hi('cppRawString', s:purple, '', '', '')
 
 " Rust
 call <sid>hi('rustStorage', s:orange, '', '', '')
-call <sid>hi('rustSelf', s:blue_green, '', '', '')
-call <sid>hi('rustEnumVariant', s:blue_green, '', '', '')
+call <sid>hi('rustSelf', s:orange, '', '', '')
+call <sid>hi('rustEnumVariant', s:teal, '', '', '')
 
 " CSS
 call <sid>hi('csClass', s:orange, '', '', '')
@@ -292,8 +295,8 @@ call <sid>hi('javaScriptNumber', s:orange, '', '', '')
 call <sid>hi('javaScriptBraces', s:grey, '', '', '')
 
 " Markdown
-call <sid>hi('markdownCode', s:blue_green, '', '', '')
-call <sid>hi('markdownCodeBlock', s:blue_green, '', '', '')
+call <sid>hi('markdownCode', s:dk_blue_green, '', '', '')
+call <sid>hi('markdownCodeBlock', s:dk_blue_green, '', '', '')
 call <sid>hi('markdownHeadingDelimiter', s:blue, '', '', '')
 call <sid>hi('markdownItalic', s:purple, '', s:italic, '')
 call <sid>hi('markdownBold', s:orange, '', s:bold, '')
