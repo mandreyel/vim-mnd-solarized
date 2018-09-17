@@ -194,7 +194,7 @@ call <sid>hi('Float', s:dk_orange, '', '', '')
 call <sid>hi('Number', s:dk_orange, '', '', '')
 call <sid>hi('Function', s:teal, '', '', '')
 call <sid>hi('Identifier', s:solarized_white, '', '', '')
-call <sid>hi('Include', s:teal, '', '', '')
+call <sid>hi('Include', s:dk_blue_green, '', '', '')
 if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('Conditional', s:purple, '', '', '')
     call <sid>hi('Repeat', s:purple, '', '', '')
@@ -226,26 +226,38 @@ call <sid>hi('SpellCap', '', '', 'undercurl', '')
 call <sid>hi('SpellRare', '', '', 'undercurl', '')
 
 " C
-call <sid>hi('cIncluded', s:blue_green, '', '', '')
+call <sid>hi('cIncluded', s:teal, '', '', '')
 call <sid>hi('cStorageClass', s:teal, '', '', '')
-call <sid>hi('cOperator', s:purple, '', '', '')
-call <sid>hi('cPreCondit', s:purple, '', '', '')
+if g:mnd_solarized_profile ==? 'purple'
+    call <sid>hi('cOperator', s:purple, '', '', '')
+    call <sid>hi('cPreCondit', s:purple, '', '', '')
+else
+    call <sid>hi('cOperator', s:orange, '', '', '')
+    call <sid>hi('cPreCondit', s:dk_blue_green, '', '', '')
+endif
 
 " C++
 call <sid>hi('cppStatement', s:orange, '', '', '')
-call <sid>hi('cppModifier', s:blue_green, '', '', '')
+call <sid>hi('cppModifier', s:dk_blue_green, '', '', '')
 call <sid>hi('cppAccess', s:orange, '', '', '')
-call <sid>hi('cppExceptions', s:orange, '', '', '')
-call <sid>hi('cppOperator', s:purple, '', '', '')
+if g:mnd_solarized_profile ==? 'purple'
+    call <sid>hi('cppExceptions', s:purple, '', '', '')
+    call <sid>hi('cppOperator', s:purple, '', '', '')
+else
+    call <sid>hi('cppExceptions', s:orange, '', '', '')
+    call <sid>hi('cppOperator', s:orange, '', '', '')
+endif
 call <sid>hi('cppCast', s:orange, '', '', '')
-call <sid>hi('cppStorageClass', s:teal, '', '', '')
+"call <sid>hi('cppStorageClass', s:teal, '', '', '')
 call <sid>hi('cppStructure', s:teal, '', '', '')
 call <sid>hi('cppConstant', s:dk_orange, '', '', '')
-call <sid>hi('cppRawString', s:purple, '', '', '')
+call <sid>hi('cppRawString', s:dk_blue_green, '', '', '')
 
 " Rust
 call <sid>hi('rustSelf', s:orange, '', '', '')
 call <sid>hi('rustEnumVariant', s:teal, '', '', '')
+" this is fun but probably distracting
+"call <sid>hi('rustModPathSep', s:orange, '', s:bold, '')
 
 " CSS
 call <sid>hi('csClass', s:orange, '', '', '')
