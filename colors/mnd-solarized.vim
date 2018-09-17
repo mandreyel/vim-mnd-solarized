@@ -83,16 +83,11 @@ let s:dk_blue_green=['#207f96', '114'] " slightly lighter than above
 let s:blue_green=['#2592ad', '114']
 "let s:l_blue_green=['#1c6e82', '114']
 
-"let s:blue=s:blue_green
-
 let s:dk_orange=['#cb4b16', '21']
 let s:orange=['#b58900', '21']
 
 let s:purple=['#6c71c4', '21']
-let s:purple=s:dk_orange
-let s:purple=s:orange
 let s:magenta=['#c12f6e', '21']
-let s:pink=['#d33682', '21']
 
 let s:lighter_grey_green=['#657b83', '08']
 let s:grey=['#839496', '20']
@@ -178,7 +173,7 @@ call <sid>hi('CursorLineNr', s:solarized_white, s:md_green, '', '')
 
 " Search
 call <sid>hi('Search', s:teal, s:md_green, s:bold, '')
-call <sid>hi('IncSearch', s:pink, s:md_green, s:bold, '')
+call <sid>hi('IncSearch', s:blue, s:md_green, s:bold, '')
 
 " Tabs
 call <sid>hi('TabLine', s:grey_green, s:md_green, '', '')
@@ -204,7 +199,7 @@ call <sid>hi('Include', s:teal, '', '', '')
 call <sid>hi('Keyword', s:purple, '', '', '')
 call <sid>hi('Label', s:purple, '', '', '')
 call <sid>hi('Number', s:orange, '', '', '')
-call <sid>hi('Operator', s:magenta, '', '', '')
+call <sid>hi('Operator', s:orange, '', '', '')
 call <sid>hi('PreProc', s:blue_green, '', '', '')
 call <sid>hi('Repeat', s:purple, '', '', '')
 call <sid>hi('Special', s:blue_green, '', '', '')
