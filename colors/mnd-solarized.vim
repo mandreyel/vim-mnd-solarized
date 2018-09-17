@@ -46,6 +46,8 @@ let g:mnd_solarized_uniform_diff_bg = get(g:, 'mnd_solarized_uniform_diff_bg', 0
 
 let g:mnd_solarized_vert_split = get(g:, 'mnd_solarized_vert_split', 0)
 
+let g:mnd_solarized_profile = get(g:, 'mnd_solarized_profile', 'purple')
+
 
 " ---------------------------------------------------------------
 " Italics
@@ -184,7 +186,6 @@ call <sid>hi('helpCommand', s:orange, '', '', '')
 call <sid>hi('Character', s:solarized_white, '', '', '')
 call <sid>hi('Comment', s:grey_green, '', s:italic, '')
 call <sid>hi('SpecialComment', s:dk_blue_green, '', s:italic, '')
-call <sid>hi('Conditional', s:purple, '', '', '')
 call <sid>hi('Define', s:blue, '', '', '')
 call <sid>hi('Delimiter', s:orange, '', '', '')
 call <sid>hi('Constant', s:dk_orange, '', '', '')
@@ -194,15 +195,24 @@ call <sid>hi('Number', s:dk_orange, '', '', '')
 call <sid>hi('Function', s:teal, '', '', '')
 call <sid>hi('Identifier', s:solarized_white, '', '', '')
 call <sid>hi('Include', s:teal, '', '', '')
-call <sid>hi('Keyword', s:purple, '', '', '')
-call <sid>hi('Label', s:purple, '', '', '')
-call <sid>hi('Operator', s:orange, '', '', '')
+if g:mnd_solarized_profile ==? 'purple'
+    call <sid>hi('Conditional', s:purple, '', '', '')
+    call <sid>hi('Repeat', s:purple, '', '', '')
+    call <sid>hi('Keyword', s:purple, '', '', '')
+    call <sid>hi('Label', s:purple, '', '', '')
+    call <sid>hi('Operator', s:orange, '', '', '')
+else " orange
+    call <sid>hi('Conditional', s:orange, '', '', '')
+    call <sid>hi('Repeat', s:orange, '', '', '')
+    call <sid>hi('Keyword', s:orange, '', '', '')
+    call <sid>hi('Label', s:orange, '', '', '')
+    call <sid>hi('Operator', s:dk_orange, '', '', '')
+endif
+call <sid>hi('StorageClass', s:dk_orange, '', '', '')
 call <sid>hi('PreProc', s:blue_green, '', '', '')
-call <sid>hi('Repeat', s:purple, '', '', '')
 call <sid>hi('Special', s:blue_green, '', '', '')
-call <sid>hi('SpecialChar', s:dk_orange, '', '', '')
 call <sid>hi('Statement', s:orange, '', '', '')
-call <sid>hi('StorageClass', s:teal, '', '', '')
+call <sid>hi('SpecialChar', s:dk_orange, '', '', '')
 call <sid>hi('String', s:dk_blue_green, '', '', '')
 call <sid>hi('Structure', s:teal, '', '', '')
 call <sid>hi('Tag', s:teal, '', '', '')
@@ -230,11 +240,10 @@ call <sid>hi('cppOperator', s:purple, '', '', '')
 call <sid>hi('cppCast', s:orange, '', '', '')
 call <sid>hi('cppStorageClass', s:teal, '', '', '')
 call <sid>hi('cppStructure', s:teal, '', '', '')
-call <sid>hi('cppConstant', s:orange, '', '', '')
+call <sid>hi('cppConstant', s:dk_orange, '', '', '')
 call <sid>hi('cppRawString', s:purple, '', '', '')
 
 " Rust
-call <sid>hi('rustStorage', s:orange, '', '', '')
 call <sid>hi('rustSelf', s:orange, '', '', '')
 call <sid>hi('rustEnumVariant', s:teal, '', '', '')
 
