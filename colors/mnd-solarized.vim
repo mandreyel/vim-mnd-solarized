@@ -92,9 +92,6 @@ let s:magenta=['#c12f6e', '21']
 let s:lighter_grey_green=['#657b83', '08']
 let s:grey=['#839496', '20']
 
-" indigo colors
-let s:indigo=['#252c37', '235']
-
 let s:white=['#ffffff', '15']
 let s:none=['NONE', 'NONE']
 
@@ -173,7 +170,7 @@ call <sid>hi('CursorLineNr', s:solarized_white, s:md_green, '', '')
 
 " Search
 call <sid>hi('Search', s:teal, s:md_green, s:bold, '')
-call <sid>hi('IncSearch', s:blue, s:md_green, s:bold, '')
+call <sid>hi('IncSearch', s:orange, s:md_green, s:bold, '')
 
 " Tabs
 call <sid>hi('TabLine', s:grey_green, s:md_green, '', '')
@@ -257,13 +254,11 @@ call <sid>hi('cssClassName', s:purple, '', '', '')
 " Diff
 if g:mnd_solarized_uniform_diff_bg
     call <sid>hi('DiffAdd', s:teal, s:md_green, s:bold, '')
-    call <sid>hi('DiffChange', s:grey_green, s:md_green, '', '')
-    call <sid>hi('DiffDelete', s:dk_orange, s:md_green, '', '')
 else
     call <sid>hi('DiffAdd', s:dk_green, s:dk_blue_green, '', '')
-    call <sid>hi('DiffChange', s:grey_green, s:md_green, '', '')
-    call <sid>hi('DiffDelete', s:dk_orange, s:md_green, '', '')
 endif
+call <sid>hi('DiffChange', s:grey_green, s:md_green, '', '')
+call <sid>hi('DiffDelete', s:dk_orange, s:md_green, '', '')
 call <sid>hi('DiffText', s:blue, s:md_green, '', '')
 call <sid>hi('DiffAdded', s:white, s:blue_green, '', '')
 call <sid>hi('DiffFile', s:solarized_white, s:dk_green, '', '')
