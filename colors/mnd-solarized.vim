@@ -172,7 +172,11 @@ call <sid>hi('CursorLineNr', s:solarized_white, s:md_green, '', '')
 
 " Search
 call <sid>hi('Search', s:teal, s:md_green, s:bold, '')
-call <sid>hi('IncSearch', s:orange, s:md_green, s:bold, '')
+if g:mnd_solarized_profile ==? 'purple'
+    call <sid>hi('IncSearch', s:purple, s:md_green, s:bold, '')
+else
+    call <sid>hi('IncSearch', s:dk_orange, s:md_green, s:bold, '')
+endif
 
 " Tabs
 call <sid>hi('TabLine', s:grey_green, s:md_green, '', '')
@@ -188,10 +192,6 @@ call <sid>hi('Comment', s:grey_green, '', s:italic, '')
 call <sid>hi('SpecialComment', s:dk_blue_green, '', s:italic, '')
 call <sid>hi('Define', s:blue, '', '', '')
 call <sid>hi('Delimiter', s:orange, '', '', '')
-call <sid>hi('Constant', s:dk_orange, '', '', '')
-call <sid>hi('Boolean', s:dk_orange, '', '', '')
-call <sid>hi('Float', s:dk_orange, '', '', '')
-call <sid>hi('Number', s:dk_orange, '', '', '')
 call <sid>hi('Function', s:teal, '', '', '')
 call <sid>hi('Identifier', s:solarized_white, '', '', '')
 call <sid>hi('Include', s:dk_blue_green, '', '', '')
@@ -201,22 +201,32 @@ if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('Keyword', s:purple, '', '', '')
     call <sid>hi('Label', s:purple, '', '', '')
     call <sid>hi('Operator', s:orange, '', '', '')
+    call <sid>hi('StorageClass', s:orange, '', '', '')
+    call <sid>hi('Constant', s:orange, '', '', '')
+    call <sid>hi('Boolean', s:orange, '', '', '')
+    call <sid>hi('Float', s:orange, '', '', '')
+    call <sid>hi('Number', s:orange, '', '', '')
+    call <sid>hi('SpecialChar', s:orange, '', '', '')
 else " orange
     call <sid>hi('Conditional', s:orange, '', '', '')
     call <sid>hi('Repeat', s:orange, '', '', '')
     call <sid>hi('Keyword', s:orange, '', '', '')
     call <sid>hi('Label', s:orange, '', '', '')
     call <sid>hi('Operator', s:dk_orange, '', '', '')
+    call <sid>hi('StorageClass', s:dk_orange, '', '', '')
+    call <sid>hi('Constant', s:dk_orange, '', '', '')
+    call <sid>hi('Boolean', s:dk_orange, '', '', '')
+    call <sid>hi('Float', s:dk_orange, '', '', '')
+    call <sid>hi('Number', s:dk_orange, '', '', '')
+    call <sid>hi('SpecialChar', s:dk_orange, '', '', '')
 endif
-call <sid>hi('StorageClass', s:dk_orange, '', '', '')
+call <sid>hi('Todo', s:dk_orange, s:dk_green, '', '')
 call <sid>hi('PreProc', s:blue_green, '', '', '')
 call <sid>hi('Special', s:blue_green, '', '', '')
 call <sid>hi('Statement', s:orange, '', '', '')
-call <sid>hi('SpecialChar', s:dk_orange, '', '', '')
 call <sid>hi('String', s:dk_blue_green, '', '', '')
 call <sid>hi('Structure', s:teal, '', '', '')
 call <sid>hi('Tag', s:teal, '', '', '')
-call <sid>hi('Todo', s:dk_orange, s:dk_green, '', '')
 call <sid>hi('Type', s:teal, '', '', '')
 call <sid>hi('Typedef', s:teal, '', '', '')
 
@@ -243,21 +253,27 @@ call <sid>hi('cppAccess', s:orange, '', '', '')
 if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('cppExceptions', s:purple, '', '', '')
     call <sid>hi('cppOperator', s:purple, '', '', '')
+    call <sid>hi('cppConstant', s:orange, '', '', '')
 else
     call <sid>hi('cppExceptions', s:orange, '', '', '')
     call <sid>hi('cppOperator', s:orange, '', '', '')
+    call <sid>hi('cppConstant', s:dk_orange, '', '', '')
 endif
 call <sid>hi('cppCast', s:orange, '', '', '')
 "call <sid>hi('cppStorageClass', s:teal, '', '', '')
 call <sid>hi('cppStructure', s:teal, '', '', '')
-call <sid>hi('cppConstant', s:dk_orange, '', '', '')
 call <sid>hi('cppRawString', s:dk_blue_green, '', '', '')
 
 " Rust
 call <sid>hi('rustSelf', s:orange, '', '', '')
 call <sid>hi('rustEnumVariant', s:teal, '', '', '')
+call <sid>hi('rustModPath', s:blue_green, '', '', '')
 " this is fun but probably distracting
-"call <sid>hi('rustModPathSep', s:orange, '', s:bold, '')
+if g:mnd_solarized_profile ==? 'purple'
+    call <sid>hi('rustModPathSep', s:orange, '', '', '')
+else
+    call <sid>hi('rustModPathSep', s:dk_orange, '', '', '')
+endif
 
 " CSS
 call <sid>hi('csClass', s:orange, '', '', '')
