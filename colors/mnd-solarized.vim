@@ -247,7 +247,7 @@ if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('cPreCondit', s:purple, '', '', '')
 else
     call <sid>hi('cOperator', s:orange, '', '', '')
-    call <sid>hi('cPreCondit', s:dk_blue_green, '', '', '')
+    call <sid>hi('cPreCondit', s:orange, '', '', '')
 endif
 
 " C++
