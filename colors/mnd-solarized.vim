@@ -223,7 +223,11 @@ endif
 call <sid>hi('Todo', s:dk_orange, s:dk_green, '', '')
 call <sid>hi('PreProc', s:blue_green, '', '', '')
 call <sid>hi('Special', s:blue_green, '', '', '')
-call <sid>hi('Statement', s:orange, '', '', '')
+if g:mnd_solarized_profile ==? 'purple'
+    call <sid>hi('Statement', s:purple, '', '', '')
+else
+    call <sid>hi('Statement', s:orange, '', '', '')
+endif
 call <sid>hi('String', s:dk_blue_green, '', '', '')
 call <sid>hi('Structure', s:teal, '', '', '')
 call <sid>hi('Tag', s:teal, '', '', '')
@@ -249,15 +253,16 @@ endif
 " C++
 call <sid>hi('cppStatement', s:orange, '', '', '')
 call <sid>hi('cppModifier', s:dk_blue_green, '', '', '')
-call <sid>hi('cppAccess', s:orange, '', '', '')
 if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('cppExceptions', s:purple, '', '', '')
     call <sid>hi('cppOperator', s:purple, '', '', '')
     call <sid>hi('cppConstant', s:orange, '', '', '')
+    call <sid>hi('cppAccess', s:purple, '', '', '')
 else
     call <sid>hi('cppExceptions', s:orange, '', '', '')
     call <sid>hi('cppOperator', s:orange, '', '', '')
     call <sid>hi('cppConstant', s:dk_orange, '', '', '')
+    call <sid>hi('cppAccess', s:orange, '', '', '')
 endif
 call <sid>hi('cppCast', s:orange, '', '', '')
 "call <sid>hi('cppStorageClass', s:teal, '', '', '')
@@ -265,13 +270,14 @@ call <sid>hi('cppStructure', s:teal, '', '', '')
 call <sid>hi('cppRawString', s:dk_blue_green, '', '', '')
 
 " Rust
-call <sid>hi('rustSelf', s:orange, '', '', '')
 call <sid>hi('rustEnumVariant', s:teal, '', '', '')
 call <sid>hi('rustModPath', s:blue_green, '', '', '')
 " this is fun but probably distracting
 if g:mnd_solarized_profile ==? 'purple'
+    call <sid>hi('rustSelf', s:purple, '', '', '')
     call <sid>hi('rustModPathSep', s:orange, '', '', '')
 else
+    call <sid>hi('rustSelf', s:orange, '', '', '')
     call <sid>hi('rustModPathSep', s:dk_orange, '', '', '')
 endif
 
