@@ -214,6 +214,7 @@ if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('SpecialChar', s:magenta, '', '', '')
     call <sid>hi('Exception', s:purple, '', '', '')
     call <sid>hi('Statement', s:purple, '', '', '')
+    call <sid>hi('Todo', s:magenta, s:dk_green, '', '')
 elseif g:mnd_solarized_profile ==? 'orange'
     call <sid>hi('Delimiter', s:orange, '', '', '')
     call <sid>hi('Conditional', s:orange, '', '', '')
@@ -229,6 +230,7 @@ elseif g:mnd_solarized_profile ==? 'orange'
     call <sid>hi('SpecialChar', s:dk_orange, '', '', '')
     call <sid>hi('Exception', s:orange, '', '', '')
     call <sid>hi('Statement', s:orange, '', '', '')
+    call <sid>hi('Todo', s:dk_orange, s:dk_green, '', '')
 else " default is a mix of purple and orange
     call <sid>hi('Delimiter', s:orange, '', '', '')
     call <sid>hi('Conditional', s:purple, '', '', '')
@@ -244,8 +246,8 @@ else " default is a mix of purple and orange
     call <sid>hi('SpecialChar', s:orange, '', '', '')
     call <sid>hi('Exception', s:purple, '', '', '')
     call <sid>hi('Statement', s:purple, '', '', '')
+    call <sid>hi('Todo', s:dk_orange, s:dk_green, '', '')
 endif
-call <sid>hi('Todo', s:dk_orange, s:dk_green, '', '')
 call <sid>hi('PreProc', s:blue_green, '', '', '')
 call <sid>hi('Special', s:blue_green, '', '', '')
 call <sid>hi('String', s:dk_blue_green, '', '', '')
@@ -263,7 +265,7 @@ call <sid>hi('SpellRare', '', '', 'undercurl', '')
 call <sid>hi('cIncluded', s:teal, '', '', '')
 if g:mnd_solarized_profile ==? 'purple'
     " TODO do we need this? it's already set above
-    call <sid>hi('cStorageClass', s:magenta, '', '', '')
+    call <sid>hi('cStorageClass', s:dk_blue_green, '', '', '')
     call <sid>hi('cOperator', s:purple, '', '', '')
     call <sid>hi('cPreCondit', s:purple, '', '', '')
 elseif g:mnd_solarized_profile ==? 'orange'
@@ -277,7 +279,7 @@ endif
 " C++
 call <sid>hi('cppModifier', s:dk_blue_green, '', '', '')
 if g:mnd_solarized_profile ==? 'purple'
-    call <sid>hi('cppStorageClass', s:magenta, '', '', '')
+    call <sid>hi('cppStorageClass', s:dk_blue_green, '', '', '')
     call <sid>hi('cppCast', s:purple, '', '', '')
     call <sid>hi('cppOperator', s:purple, '', '', '')
     call <sid>hi('cppConstant', s:magenta, '', '', '')
