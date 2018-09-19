@@ -128,7 +128,6 @@ call <sid>hi('Debug', s:solarized_white, '', '', '')
 call <sid>hi('Directory', s:blue, '', '', '')
 call <sid>hi('Error', s:dk_orange, s:dk_green, '', '')
 call <sid>hi('ErrorMsg', s:dk_orange, s:dk_green, '', '')
-call <sid>hi('Exception', s:orange, '', '', '')
 call <sid>hi('Italic', '', '', s:italic, '')
 
 call <sid>hi('Macro', s:teal, '', '', '')
@@ -213,6 +212,7 @@ if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('Float', s:magenta, '', '', '')
     call <sid>hi('Number', s:magenta, '', '', '')
     call <sid>hi('SpecialChar', s:magenta, '', '', '')
+    call <sid>hi('Exception', s:purple, '', '', '')
 elseif g:mnd_solarized_profile ==? 'orange'
     call <sid>hi('Delimiter', s:orange, '', '', '')
     call <sid>hi('Conditional', s:orange, '', '', '')
@@ -226,6 +226,7 @@ elseif g:mnd_solarized_profile ==? 'orange'
     call <sid>hi('Float', s:dk_orange, '', '', '')
     call <sid>hi('Number', s:dk_orange, '', '', '')
     call <sid>hi('SpecialChar', s:dk_orange, '', '', '')
+    call <sid>hi('Exception', s:orange, '', '', '')
 else " default is a mix of purple and orange
     call <sid>hi('Delimiter', s:orange, '', '', '')
     call <sid>hi('Conditional', s:purple, '', '', '')
@@ -239,6 +240,7 @@ else " default is a mix of purple and orange
     call <sid>hi('Float', s:orange, '', '', '')
     call <sid>hi('Number', s:orange, '', '', '')
     call <sid>hi('SpecialChar', s:orange, '', '', '')
+    call <sid>hi('Exception', s:purple, '', '', '')
 endif
 call <sid>hi('Todo', s:dk_orange, s:dk_green, '', '')
 call <sid>hi('PreProc', s:blue_green, '', '', '')
@@ -282,21 +284,18 @@ if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('cppStorageClass', s:magenta, '', '', '')
     call <sid>hi('cppCast', s:purple, '', '', '')
     call <sid>hi('cppStatement', s:magenta, '', s:bold, '')
-    call <sid>hi('cppExceptions', s:purple, '', '', '')
     call <sid>hi('cppOperator', s:purple, '', '', '')
     call <sid>hi('cppConstant', s:magenta, '', '', '')
     call <sid>hi('cppAccess', s:purple, '', '', '')
 elseif g:mnd_solarized_profile ==? 'orange'
     call <sid>hi('cppCast', s:orange, '', '', '')
     call <sid>hi('cppStatement', s:orange, '', '', '')
-    call <sid>hi('cppExceptions', s:orange, '', '', '')
     call <sid>hi('cppOperator', s:orange, '', '', '')
     call <sid>hi('cppConstant', s:dk_orange, '', '', '')
     call <sid>hi('cppAccess', s:orange, '', '', '')
 else
     call <sid>hi('cppCast', s:orange, '', '', '')
     call <sid>hi('cppStatement', s:orange, '', '', '')
-    call <sid>hi('cppExceptions', s:purple, '', '', '')
     call <sid>hi('cppOperator', s:purple, '', '', '')
     call <sid>hi('cppConstant', s:orange, '', '', '')
     call <sid>hi('cppAccess', s:purple, '', '', '')
