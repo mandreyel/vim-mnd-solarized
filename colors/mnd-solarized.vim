@@ -261,8 +261,8 @@ call <sid>hi('SpellRare', '', '', 'undercurl', '')
 
 " C
 call <sid>hi('cIncluded', s:teal, '', '', '')
-" TODO do we need this? it's already set above
 if g:mnd_solarized_profile ==? 'purple'
+    " TODO do we need this? it's already set above
     call <sid>hi('cStorageClass', s:magenta, '', '', '')
     call <sid>hi('cOperator', s:purple, '', '', '')
     call <sid>hi('cPreCondit', s:purple, '', '', '')
@@ -279,19 +279,16 @@ call <sid>hi('cppModifier', s:dk_blue_green, '', '', '')
 if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('cppStorageClass', s:magenta, '', '', '')
     call <sid>hi('cppCast', s:purple, '', '', '')
-    call <sid>hi('cppStatement', s:magenta, '', s:bold, '')
     call <sid>hi('cppOperator', s:purple, '', '', '')
     call <sid>hi('cppConstant', s:magenta, '', '', '')
     call <sid>hi('cppAccess', s:purple, '', '', '')
 elseif g:mnd_solarized_profile ==? 'orange'
     call <sid>hi('cppCast', s:orange, '', '', '')
-    call <sid>hi('cppStatement', s:orange, '', '', '')
     call <sid>hi('cppOperator', s:orange, '', '', '')
     call <sid>hi('cppConstant', s:dk_orange, '', '', '')
     call <sid>hi('cppAccess', s:orange, '', '', '')
 else
     call <sid>hi('cppCast', s:orange, '', '', '')
-    call <sid>hi('cppStatement', s:orange, '', '', '')
     call <sid>hi('cppOperator', s:purple, '', '', '')
     call <sid>hi('cppConstant', s:orange, '', '', '')
     call <sid>hi('cppAccess', s:purple, '', '', '')
