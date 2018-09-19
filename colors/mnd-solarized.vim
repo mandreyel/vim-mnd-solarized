@@ -41,61 +41,61 @@ endif
 " ---------------------------------------------------------------
 let g:mnd_solarized_terminal_italic = get(g:, 'mnd_solarized_terminal_italic', 1)
 let g:mnd_solarized_terminal_bold = get(g:, 'mnd_solarized_terminal_bold', 1)
-
 let g:mnd_solarized_uniform_diff_bg = get(g:, 'mnd_solarized_uniform_diff_bg', 0)
-
 let g:mnd_solarized_vert_split = get(g:, 'mnd_solarized_vert_split', 0)
-
 let g:mnd_solarized_profile = get(g:, 'mnd_solarized_profile', 'purple')
-
+let g:mnd_solarized_bold_operators = get(g:, 'mnd_solarized_bold_operators', 0)
 
 " ---------------------------------------------------------------
 " Italics
 " ---------------------------------------------------------------
-let s:italic = ""
+let s:italic = ''
 if g:mnd_solarized_terminal_italic
-    let s:italic = "italic"
+    let s:italic = 'italic'
 endif
-
 
 " ---------------------------------------------------------------
 " Bold
 " ---------------------------------------------------------------
-let s:bold = ""
+let s:bold = ''
 if g:mnd_solarized_terminal_bold
-    let s:bold = "bold"
+    let s:bold = 'bold'
 endif
 
+let s:maybe_bold = ''
+if g:mnd_solarized_bold_operators
+    let s:maybe_bold = 'bold'
+endif
 
 " ---------------------------------------------------------------
 " Colors
 " ---------------------------------------------------------------
 " solarized colors
-let s:solarized_white=['#93a1a1', '203']
+let s:solarized_white = ['#93a1a1', '203']
 
-let s:dk_green=['#002b36', '00']
-let s:md_green=['#073642', '18']
-let s:grey_green=['#586e75', '19']
-let s:rotten_green=['#859900', '21']
+let s:dk_green = ['#002b36', '00']
+let s:md_green = ['#073642', '18']
+let s:grey_green = ['#586e75', '19']
+let s:rotten_green = ['#859900', '21']
 
-let s:teal=['#2aa198', '21']
-let s:blue=['#268bd2', '21']
-let s:dk_blue_green=['#218299', '114'] " darker: 22869e, even darker: 005970
-let s:dk_blue_green=['#207f96', '114'] " slightly lighter than above
-let s:blue_green=['#2592ad', '114']
-"let s:l_blue_green=['#1c6e82', '114']
+let s:teal = ['#2aa198', '21']
+let s:blue = ['#268bd2', '21']
+let s:dk_blue_green = ['#218299', '114'] " darker: 22869e, even darker: 005970
+let s:dk_blue_green = ['#207f96', '114'] " slightly lighter than above
+let s:blue_green = ['#2592ad', '114']
+"let s:l_blue_green = ['#1c6e82', '114']
 
-let s:dk_orange=['#cb4b16', '21']
-let s:orange=['#b58900', '21']
+let s:dk_orange = ['#cb4b16', '21']
+let s:orange = ['#b58900', '21']
 
-let s:purple=['#6c71c4', '21']
-let s:magenta=['#c12f6e', '21']
+let s:purple = ['#6c71c4', '21']
+let s:magenta = ['#c12f6e', '21']
 
-let s:lighter_grey_green=['#657b83', '08']
-let s:grey=['#839496', '20']
+let s:lighter_grey_green = ['#657b83', '08']
+let s:grey = ['#839496', '20']
 
-let s:white=['#ffffff', '15']
-let s:none=['NONE', 'NONE']
+let s:white = ['#ffffff', '15']
+let s:none = ['NONE', 'NONE']
 
 " ---------------------------------------------------------------
 " Highlight function
@@ -205,8 +205,8 @@ if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('Repeat', s:purple, '', '', '')
     call <sid>hi('Keyword', s:purple, '', '', '')
     call <sid>hi('Label', s:purple, '', '', '')
-    call <sid>hi('Operator', s:magenta, '', s:bold, '')
-    call <sid>hi('StorageClass', s:magenta, '', s:bold, '')
+    call <sid>hi('Operator', s:magenta, '', s:maybe_bold, '')
+    call <sid>hi('StorageClass', s:magenta, '', s:maybe_bold, '')
     call <sid>hi('Constant', s:magenta, '', '', '')
     call <sid>hi('Boolean', s:magenta, '', '', '')
     call <sid>hi('Float', s:magenta, '', '', '')
@@ -221,8 +221,8 @@ elseif g:mnd_solarized_profile ==? 'orange'
     call <sid>hi('Repeat', s:orange, '', '', '')
     call <sid>hi('Keyword', s:orange, '', '', '')
     call <sid>hi('Label', s:orange, '', '', '')
-    call <sid>hi('Operator', s:dk_orange, '', '', '')
-    call <sid>hi('StorageClass', s:dk_orange, '', '', '')
+    call <sid>hi('Operator', s:dk_orange, '', s:maybe_bold, '')
+    call <sid>hi('StorageClass', s:dk_orange, '', s:maybe_bold, '')
     call <sid>hi('Constant', s:dk_orange, '', '', '')
     call <sid>hi('Boolean', s:dk_orange, '', '', '')
     call <sid>hi('Float', s:dk_orange, '', '', '')
@@ -237,8 +237,8 @@ else " default is a mix of purple and orange
     call <sid>hi('Repeat', s:purple, '', '', '')
     call <sid>hi('Keyword', s:purple, '', '', '')
     call <sid>hi('Label', s:purple, '', '', '')
-    call <sid>hi('Operator', s:orange, '', '', '')
-    call <sid>hi('StorageClass', s:orange, '', '', '')
+    call <sid>hi('Operator', s:orange, '', s:maybe_bold, '')
+    call <sid>hi('StorageClass', s:orange, '', s:maybe_bold, '')
     call <sid>hi('Constant', s:orange, '', '', '')
     call <sid>hi('Boolean', s:orange, '', '', '')
     call <sid>hi('Float', s:orange, '', '', '')
@@ -304,13 +304,13 @@ call <sid>hi('rustModPath', s:blue_green, '', '', '')
 " this is fun but probably distracting
 if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('rustSelf', s:purple, '', '', '')
-    call <sid>hi('rustModPathSep', s:magenta, '', '', '')
+    call <sid>hi('rustModPathSep', s:magenta, '', s:maybe_bold, '')
 elseif g:mnd_solarized_profile ==? 'orange'
     call <sid>hi('rustSelf', s:orange, '', '', '')
-    call <sid>hi('rustModPathSep', s:dk_orange, '', '', '')
+    call <sid>hi('rustModPathSep', s:dk_orange, '', s:maybe_bold, '')
 else
     call <sid>hi('rustSelf', s:purple, '', '', '')
-    call <sid>hi('rustModPathSep', s:orange, '', '', '')
+    call <sid>hi('rustModPathSep', s:orange, '', s:maybe_bold, '')
 endif
 
 " CSS
