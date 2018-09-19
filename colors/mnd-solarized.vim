@@ -125,7 +125,13 @@ endfunction
 " ---------------------------------------------------------------
 call <sid>hi('Bold', '', '', 'bold', '')
 call <sid>hi('Debug', s:solarized_white, '', '', '')
-call <sid>hi('Directory', s:blue, '', '', '')
+if g:mnd_solarized_profile ==? 'purple'
+    call <sid>hi('Directory', s:purple, '', '', '')
+elseif g:mnd_solarized_profile ==? 'orange'
+    call <sid>hi('Directory', s:dk_orange, '', '', '')
+else
+    call <sid>hi('Directory', s:purple, '', '', '')
+endif
 call <sid>hi('Error', s:dk_orange, s:dk_green, '', '')
 call <sid>hi('ErrorMsg', s:dk_orange, s:dk_green, '', '')
 call <sid>hi('Italic', '', '', s:italic, '')
@@ -154,8 +160,8 @@ call <sid>hi('Visual', '', s:md_green, '', '')
 call <sid>hi('VisualNOS', s:solarized_white, '', '', '')
 call <sid>hi('WarningMsg', s:solarized_white, '', '', '')
 call <sid>hi('WildMenu', s:teal, s:md_green, s:bold, '')
-call <sid>hi('Title', s:blue, '', '', '')
-call <sid>hi('Conceal', s:blue, s:dk_green, '', '')
+call <sid>hi('Title', s:teal, '', '', '')
+call <sid>hi('Conceal', s:teal, s:dk_green, '', '')
 call <sid>hi('Cursor', s:dk_green, s:grey, '', '')
 call <sid>hi('NonText', s:grey_green, '', '', '')
 call <sid>hi('Normal', s:solarized_white, s:dk_green, '', '')
@@ -168,7 +174,7 @@ call <sid>hi('VertSplit', s:dk_green, s:md_green, '', '')
 call <sid>hi('ColorColumn', '', s:md_green, '', '')
 
 " Gutter
-call <sid>hi('FoldColumn', s:blue, s:dk_green, '', '')
+call <sid>hi('FoldColumn', s:teal, s:dk_green, '', '')
 call <sid>hi('Folded', s:grey_green, s:md_green, s:italic, '')
 call <sid>hi('CursorColumn', '', s:md_green, '', '')
 call <sid>hi('CursorLine', '', s:md_green, 'NONE', '')
@@ -416,7 +422,7 @@ call <sid>hi('vimfilerClosedFile', s:blue, '', '', '')
 
 " GitGutter
 call <sid>hi('GitGutterAdd', s:blue_green, s:dk_green, s:bold, '')
-call <sid>hi('GitGutterChange', s:blue, s:dk_green, s:bold, '')
+call <sid>hi('GitGutterChange', s:purple, s:dk_green, s:bold, '')
 call <sid>hi('GitGutterDelete', s:solarized_white, s:dk_green, s:bold, '')
 call <sid>hi('GitGutterChangeDelete', s:purple, s:dk_green, s:bold, '')
 
@@ -424,6 +430,15 @@ call <sid>hi('GitGutterChangeDelete', s:purple, s:dk_green, s:bold, '')
 call <sid>hi('xmlTag', s:teal, '', '', '')
 call <sid>hi('xmlTagName', s:grey, '', '', '')
 call <sid>hi('xmlEndTag', s:teal, '', '', '')
+
+" startify
+if g:mnd_solarized_profile ==? 'purple'
+    call <sid>hi('StartifyBracket', s:purple, '', '', '')
+elseif g:mnd_solarized_profile ==? 'orange'
+    call <sid>hi('StartifyBracket', s:orange, '', '', '')
+else
+    call <sid>hi('StartifyBracket', s:purple, '', '', '')
+endif
 
 let g:terminal_color_0=s:dk_green[0]
 let g:terminal_color_8=s:dk_green[0]
