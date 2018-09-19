@@ -165,7 +165,7 @@ call <sid>hi('LineNr', s:grey_green, s:dk_green, '', '')
 call <sid>hi('SignColumn', s:dk_green, s:dk_green, '', '')
 call <sid>hi('StatusLine', s:grey_green, s:dk_green, '', '')
 call <sid>hi('StatusLineNC', s:md_green, s:grey_green, '', '')
-call <sid>hi('VertSplit', s:dk_green, s:grey_green, '', '')
+call <sid>hi('VertSplit', s:dk_green, s:md_green, '', '')
 call <sid>hi('ColorColumn', '', s:md_green, '', '')
 
 " Gutter
