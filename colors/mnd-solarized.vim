@@ -206,8 +206,8 @@ if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('Repeat', s:purple, '', '', '')
     call <sid>hi('Keyword', s:purple, '', '', '')
     call <sid>hi('Label', s:purple, '', '', '')
-    call <sid>hi('Operator', s:magenta, '', '', '')
-    call <sid>hi('StorageClass', s:magenta, '', '', '')
+    call <sid>hi('Operator', s:magenta, '', s:bold, '')
+    call <sid>hi('StorageClass', s:magenta, '', s:bold, '')
     call <sid>hi('Constant', s:magenta, '', '', '')
     call <sid>hi('Boolean', s:magenta, '', '', '')
     call <sid>hi('Float', s:magenta, '', '', '')
@@ -264,8 +264,8 @@ call <sid>hi('SpellRare', '', '', 'undercurl', '')
 " C
 call <sid>hi('cIncluded', s:teal, '', '', '')
 " TODO do we need this? it's already set above
-"call <sid>hi('cStorageClass', s:teal, '', '', '')
 if g:mnd_solarized_profile ==? 'purple'
+    call <sid>hi('cStorageClass', s:magenta, '', '', '')
     call <sid>hi('cOperator', s:purple, '', '', '')
     call <sid>hi('cPreCondit', s:purple, '', '', '')
 elseif g:mnd_solarized_profile ==? 'orange'
@@ -279,8 +279,9 @@ endif
 " C++
 call <sid>hi('cppModifier', s:dk_blue_green, '', '', '')
 if g:mnd_solarized_profile ==? 'purple'
+    call <sid>hi('cppStorageClass', s:magenta, '', '', '')
     call <sid>hi('cppCast', s:purple, '', '', '')
-    call <sid>hi('cppStatement', s:magenta, '', '', '')
+    call <sid>hi('cppStatement', s:magenta, '', s:bold, '')
     call <sid>hi('cppExceptions', s:purple, '', '', '')
     call <sid>hi('cppOperator', s:purple, '', '', '')
     call <sid>hi('cppConstant', s:magenta, '', '', '')
