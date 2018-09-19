@@ -265,7 +265,7 @@ call <sid>hi('SpellRare', '', '', 'undercurl', '')
 call <sid>hi('cIncluded', s:teal, '', '', '')
 if g:mnd_solarized_profile ==? 'purple'
     " TODO do we need this? it's already set above
-    call <sid>hi('cStorageClass', s:dk_blue_green, '', '', '')
+    call <sid>hi('cStorageClass', s:blue_green, '', '', '')
     call <sid>hi('cOperator', s:purple, '', '', '')
     call <sid>hi('cPreCondit', s:purple, '', '', '')
 elseif g:mnd_solarized_profile ==? 'orange'
@@ -277,9 +277,9 @@ else
 endif
 
 " C++
-call <sid>hi('cppModifier', s:dk_blue_green, '', '', '')
+call <sid>hi('cppModifier', s:blue_green, '', '', '')
 if g:mnd_solarized_profile ==? 'purple'
-    call <sid>hi('cppStorageClass', s:dk_blue_green, '', '', '')
+    call <sid>hi('cppStorageClass', s:blue_green, '', '', '')
     call <sid>hi('cppCast', s:purple, '', '', '')
     call <sid>hi('cppOperator', s:purple, '', '', '')
     call <sid>hi('cppConstant', s:magenta, '', '', '')
