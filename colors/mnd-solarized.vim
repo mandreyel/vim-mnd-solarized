@@ -213,6 +213,7 @@ if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('Number', s:magenta, '', '', '')
     call <sid>hi('SpecialChar', s:magenta, '', '', '')
     call <sid>hi('Exception', s:purple, '', '', '')
+    call <sid>hi('Statement', s:purple, '', '', '')
 elseif g:mnd_solarized_profile ==? 'orange'
     call <sid>hi('Delimiter', s:orange, '', '', '')
     call <sid>hi('Conditional', s:orange, '', '', '')
@@ -227,6 +228,7 @@ elseif g:mnd_solarized_profile ==? 'orange'
     call <sid>hi('Number', s:dk_orange, '', '', '')
     call <sid>hi('SpecialChar', s:dk_orange, '', '', '')
     call <sid>hi('Exception', s:orange, '', '', '')
+    call <sid>hi('Statement', s:orange, '', '', '')
 else " default is a mix of purple and orange
     call <sid>hi('Delimiter', s:orange, '', '', '')
     call <sid>hi('Conditional', s:purple, '', '', '')
@@ -241,17 +243,11 @@ else " default is a mix of purple and orange
     call <sid>hi('Number', s:orange, '', '', '')
     call <sid>hi('SpecialChar', s:orange, '', '', '')
     call <sid>hi('Exception', s:purple, '', '', '')
+    call <sid>hi('Statement', s:purple, '', '', '')
 endif
 call <sid>hi('Todo', s:dk_orange, s:dk_green, '', '')
 call <sid>hi('PreProc', s:blue_green, '', '', '')
 call <sid>hi('Special', s:blue_green, '', '', '')
-if g:mnd_solarized_profile ==? 'purple'
-    call <sid>hi('Statement', s:purple, '', '', '')
-elseif g:mnd_solarized_profile ==? 'orange'
-    call <sid>hi('Statement', s:orange, '', '', '')
-else
-    call <sid>hi('Statement', s:purple, '', '', '')
-endif
 call <sid>hi('String', s:dk_blue_green, '', '', '')
 call <sid>hi('Structure', s:teal, '', '', '')
 call <sid>hi('Tag', s:teal, '', '', '')
