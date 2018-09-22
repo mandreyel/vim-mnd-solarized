@@ -309,10 +309,10 @@ call <sid>hi('cppRawString', s:dk_blue_green, '', '', '')
 call <sid>hi('rustEnumVariant', s:teal, '', '', '')
 call <sid>hi('rustModPath', s:blue_green, '', '', '')
 call <sid>hi('rustLifetime', s:blue_green, '', s:bold, '')
+call <sid>hi('rustSelf', s:blue_green, '', s:bold, '')
 if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('rustPanic', s:magenta, '', s:bold, '')
     call <sid>hi('rustAssert', s:magenta, '', s:bold, '')
-    call <sid>hi('rustSelf', s:purple, '', '', '')
     call <sid>hi('rustModPathSep', s:magenta, '', s:bold, '')
     call <sid>hi('rustQuestionMark', s:magenta, '', s:bold, '')
     "call <sid>hi('rustRepeat', s:purple, '', s:bold, '')
@@ -323,12 +323,10 @@ if g:mnd_solarized_profile ==? 'purple'
 elseif g:mnd_solarized_profile ==? 'orange'
     call <sid>hi('rustPanic', s:dk_orange, '', '', '')
     call <sid>hi('rustAssert', s:dk_orange, '', '', '')
-    call <sid>hi('rustSelf', s:orange, '', '', '')
     call <sid>hi('rustModPathSep', s:dk_orange, '', s:bold, '')
 else
     call <sid>hi('rustPanic', s:orange, '', '', '')
     call <sid>hi('rustAssert', s:orange, '', '', '')
-    call <sid>hi('rustSelf', s:purple, '', '', '')
     call <sid>hi('rustModPathSep', s:orange, '', s:bold, '')
 endif
 
