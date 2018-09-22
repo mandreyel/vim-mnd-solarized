@@ -83,6 +83,7 @@ let s:blue_green = ['#2592ad', '114']
 let s:dk_orange = ['#cb4b16', '21']
 let s:orange = ['#b58900', '21']
 
+let s:purple = ['#7379d1', '21'] " slightly brighter
 let s:purple = ['#6c71c4', '21']
 let s:l_magenta = ['#c43090', '21']
 let s:dk_magenta = ['#ab2a7d', '21']
@@ -126,8 +127,6 @@ endfunction
 " ---------------------------------------------------------------
 " call <sid>:hi(group, fg, bg, gui, guisp)
 " ---------------------------------------------------------------
-call <sid>hi('Bold', '', '', 'bold', '')
-call <sid>hi('Debug', s:solarized_white, '', '', '')
 if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('Directory', s:purple, '', '', '')
 elseif g:mnd_solarized_profile ==? 'orange'
@@ -135,9 +134,11 @@ elseif g:mnd_solarized_profile ==? 'orange'
 else
     call <sid>hi('Directory', s:purple, '', '', '')
 endif
-call <sid>hi('Error', s:dk_orange, s:dk_green, '', '')
-call <sid>hi('ErrorMsg', s:dk_orange, s:dk_green, '', '')
+call <sid>hi('Debug', s:solarized_white, '', '', '')
+call <sid>hi('Error', s:l_magenta, s:dk_green, '', '')
+call <sid>hi('ErrorMsg', s:l_magenta, s:dk_green, '', '')
 call <sid>hi('Italic', '', '', s:italic, '')
+call <sid>hi('Bold', '', '', s:bold, '')
 
 call <sid>hi('Macro', s:teal, '', '', '')
 if g:mnd_solarized_profile ==? 'purple'
@@ -214,6 +215,8 @@ if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('Repeat', s:purple, '', '', '')
     call <sid>hi('Keyword', s:purple, '', '', '')
     call <sid>hi('Label', s:purple, '', '', '')
+    call <sid>hi('Exception', s:purple, '', '', '')
+    call <sid>hi('Statement', s:purple, '', '', '')
     call <sid>hi('Operator', s:magenta, '', s:bold, '')
     call <sid>hi('StorageClass', s:magenta, '', s:bold, '')
     call <sid>hi('Constant', s:magenta, '', s:bold, '')
@@ -221,8 +224,6 @@ if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('Float', s:magenta, '', s:bold, '')
     call <sid>hi('Number', s:magenta, '', s:bold, '')
     call <sid>hi('SpecialChar', s:magenta, '', s:bold, '')
-    call <sid>hi('Exception', s:purple, '', '', '')
-    call <sid>hi('Statement', s:purple, '', '', '')
     call <sid>hi('Todo', s:magenta, s:dk_green, '', '')
 elseif g:mnd_solarized_profile ==? 'orange'
     call <sid>hi('Delimiter', s:orange, '', '', '')
@@ -230,6 +231,8 @@ elseif g:mnd_solarized_profile ==? 'orange'
     call <sid>hi('Repeat', s:orange, '', '', '')
     call <sid>hi('Keyword', s:orange, '', '', '')
     call <sid>hi('Label', s:orange, '', '', '')
+    call <sid>hi('Exception', s:orange, '', '', '')
+    call <sid>hi('Statement', s:orange, '', '', '')
     call <sid>hi('Operator', s:dk_orange, '', s:bold, '')
     call <sid>hi('StorageClass', s:dk_orange, '', s:bold, '')
     call <sid>hi('Constant', s:dk_orange, '', '', '')
@@ -237,8 +240,6 @@ elseif g:mnd_solarized_profile ==? 'orange'
     call <sid>hi('Float', s:dk_orange, '', '', '')
     call <sid>hi('Number', s:dk_orange, '', '', '')
     call <sid>hi('SpecialChar', s:dk_orange, '', '', '')
-    call <sid>hi('Exception', s:orange, '', '', '')
-    call <sid>hi('Statement', s:orange, '', '', '')
     call <sid>hi('Todo', s:dk_orange, s:dk_green, '', '')
 else " default is a mix of purple and orange
     call <sid>hi('Delimiter', s:orange, '', '', '')
@@ -246,6 +247,8 @@ else " default is a mix of purple and orange
     call <sid>hi('Repeat', s:purple, '', '', '')
     call <sid>hi('Keyword', s:purple, '', '', '')
     call <sid>hi('Label', s:purple, '', '', '')
+    call <sid>hi('Exception', s:purple, '', '', '')
+    call <sid>hi('Statement', s:purple, '', '', '')
     call <sid>hi('Operator', s:orange, '', s:bold, '')
     call <sid>hi('StorageClass', s:orange, '', s:bold, '')
     call <sid>hi('Constant', s:orange, '', '', '')
@@ -253,8 +256,6 @@ else " default is a mix of purple and orange
     call <sid>hi('Float', s:orange, '', '', '')
     call <sid>hi('Number', s:orange, '', '', '')
     call <sid>hi('SpecialChar', s:orange, '', '', '')
-    call <sid>hi('Exception', s:purple, '', '', '')
-    call <sid>hi('Statement', s:purple, '', '', '')
     call <sid>hi('Todo', s:dk_orange, s:dk_green, '', '')
 endif
 call <sid>hi('PreProc', s:blue_green, '', '', '')
@@ -306,14 +307,24 @@ call <sid>hi('cppRawString', s:dk_blue_green, '', '', '')
 " Rust
 call <sid>hi('rustEnumVariant', s:teal, '', '', '')
 call <sid>hi('rustModPath', s:blue_green, '', '', '')
-" this is fun but probably distracting
 if g:mnd_solarized_profile ==? 'purple'
+    call <sid>hi('rustPanic', s:magenta, '', s:bold, '')
+    call <sid>hi('rustAssert', s:magenta, '', s:bold, '')
     call <sid>hi('rustSelf', s:purple, '', '', '')
     call <sid>hi('rustModPathSep', s:magenta, '', s:bold, '')
+    "call <sid>hi('rustRepeat', s:purple, '', s:bold, '')
+    "call <sid>hi('rustConditional', s:purple, '', s:bold, '')
+    " vim-rust-syntax-patch plugin additions
+    "call <sid>hi('rustCtrlFlow', s:purple, '', s:bold, '')
+    call <sid>hi('rustUnsafeKeyword', s:magenta, '', s:bold, '')
 elseif g:mnd_solarized_profile ==? 'orange'
+    call <sid>hi('rustPanic', s:dk_orange, '', '', '')
+    call <sid>hi('rustAssert', s:dk_orange, '', '', '')
     call <sid>hi('rustSelf', s:orange, '', '', '')
     call <sid>hi('rustModPathSep', s:dk_orange, '', s:bold, '')
 else
+    call <sid>hi('rustPanic', s:orange, '', '', '')
+    call <sid>hi('rustAssert', s:orange, '', '', '')
     call <sid>hi('rustSelf', s:purple, '', '', '')
     call <sid>hi('rustModPathSep', s:orange, '', s:bold, '')
 endif
@@ -327,9 +338,20 @@ call <sid>hi('csUnspecifiedStatement', s:blue, '', '', '')
 call <sid>hi('csContextualStatement', s:purple, '', '', '')
 call <sid>hi('csNewDecleration', s:solarized_white, '', '', '')
 
+call <sid>hi('cssProp', s:blue_green, '', '', '')
 call <sid>hi('cssColor', s:teal, '', '', '')
-call <sid>hi('cssBraces', s:grey, '', '', '')
+call <sid>hi('cssBraces', s:solarized_white, '', '', '')
 call <sid>hi('cssClassName', s:purple, '', '', '')
+call <sid>hi('cssUnitDecorators', s:teal, '', '', '')
+
+" HTML
+call <sid>hi('htmlBold', s:orange, '', '', '')
+call <sid>hi('htmlItalic', s:purple, '', '', '')
+call <sid>hi('htmlTag', s:teal, '', '', '')
+call <sid>hi('htmlEndTag', s:teal, '', '', '')
+call <sid>hi('htmlArg', s:orange, '', '', '')
+call <sid>hi('htmlTagName', s:solarized_white, '', '', '')
+call <sid>hi('htmlString', s:blue_green, '', '', '')
 
 " Diff
 if g:mnd_solarized_uniform_diff_bg
@@ -338,7 +360,11 @@ else
     call <sid>hi('DiffAdd', s:dk_green, s:dk_blue_green, '', '')
 endif
 call <sid>hi('DiffChange', s:grey_green, s:md_green, '', '')
-call <sid>hi('DiffDelete', s:dk_orange, s:md_green, '', '')
+if g:mnd_solarized_profile ==? 'purple'
+    call <sid>hi('DiffDelete', s:magenta, s:md_green, s:bold, '')
+else
+    call <sid>hi('DiffDelete', s:dk_orange, s:md_green, s:bold, '')
+endif
 call <sid>hi('DiffText', s:blue, s:md_green, '', '')
 call <sid>hi('DiffAdded', s:white, s:blue_green, '', '')
 call <sid>hi('DiffFile', s:solarized_white, s:dk_green, '', '')
@@ -350,15 +376,6 @@ call <sid>hi('DiffRemoved', s:white, s:solarized_white, '', '')
 call <sid>hi('gitCommitOverflow', s:solarized_white, '', '', '')
 call <sid>hi('gitCommitSummary', s:blue_green, '', '', '')
 
-" HTML
-call <sid>hi('htmlBold', s:orange, '', '', '')
-call <sid>hi('htmlItalic', s:purple, '', '', '')
-call <sid>hi('htmlTag', s:teal, '', '', '')
-call <sid>hi('htmlEndTag', s:teal, '', '', '')
-call <sid>hi('htmlArg', s:orange, '', '', '')
-call <sid>hi('htmlTagName', s:solarized_white, '', '', '')
-call <sid>hi('htmlString', s:blue_green, '', '', '')
-
 " JS
 call <sid>hi('javaScript', s:grey, '', '', '')
 call <sid>hi('javaScriptNumber', s:orange, '', '', '')
@@ -367,32 +384,23 @@ call <sid>hi('javaScriptBraces', s:grey, '', '', '')
 " Markdown
 call <sid>hi('markdownCode', s:dk_blue_green, '', '', '')
 call <sid>hi('markdownCodeBlock', s:dk_blue_green, '', '', '')
-call <sid>hi('markdownHeadingDelimiter', s:blue, '', '', '')
-call <sid>hi('markdownItalic', s:purple, '', s:italic, '')
-call <sid>hi('markdownBold', s:orange, '', s:bold, '')
-call <sid>hi('markdownCodeDelimiter', s:orange, '', s:italic, '')
+if g:mnd_solarized_profile ==? 'purple'
+    call <sid>hi('markdownHeadingDelimiter', s:purple, '', '', '')
+    call <sid>hi('markdownBold', s:purple, '', s:bold, '')
+    call <sid>hi('markdownItalic', s:purple, '', s:italic, '')
+    call <sid>hi('markdownCodeDelimiter', s:magenta, '', s:italic, '')
+else
+    call <sid>hi('markdownHeadingDelimiter', s:orange, '', '', '')
+    call <sid>hi('markdownBold', s:orange, '', s:bold, '')
+    call <sid>hi('markdownItalic', s:orange, '', s:italic, '')
+    call <sid>hi('markdownCodeDelimiter', s:orange, '', s:italic, '')
+endif
 call <sid>hi('markdownError', s:grey, s:dk_green, '', '')
-
-call <sid>hi('NeomakeErrorSign', s:solarized_white, s:dk_green, '', '')
-call <sid>hi('NeomakeWarningSign', s:orange, s:dk_green, '', '')
-call <sid>hi('NeomakeInfoSign', s:white, s:dk_green, '', '')
-call <sid>hi('NeomakeError', s:solarized_white, '', 'undercurl', s:solarized_white)
-call <sid>hi('NeomakeWarning', s:solarized_white, '', 'undercurl', s:solarized_white)
-
-" ALE
-call <sid>hi('ALEErrorSign', s:orange, s:dk_green, s:bold, '')
-call <sid>hi('ALEWarningSign', s:orange, s:dk_green, s:bold, '')
-call <sid>hi('ALEInfoSign', s:white, s:dk_green, s:bold, '')
 
 " NERDTree
 call <sid>hi('NERDTreeExecFile', s:grey, '', '', '')
 call <sid>hi('NERDTreeDirSlash', s:blue, '', '', '')
 call <sid>hi('NERDTreeOpenable', s:blue, '', '', '')
-
-" PHP
-call <sid>hi('phpComparison', s:grey, '', '', '')
-call <sid>hi('phpParent', s:grey, '', '', '')
-call <sid>hi('phpMemberSelector', s:grey, '', '', '')
 
 " Python
 call <sid>hi('pythonRepeat', s:purple, '', '', '')
@@ -424,11 +432,6 @@ call <sid>hi('GitGutterAdd', s:blue_green, s:dk_green, s:bold, '')
 call <sid>hi('GitGutterChange', s:purple, s:dk_green, s:bold, '')
 call <sid>hi('GitGutterDelete', s:solarized_white, s:dk_green, s:bold, '')
 call <sid>hi('GitGutterChangeDelete', s:purple, s:dk_green, s:bold, '')
-
-" XML
-call <sid>hi('xmlTag', s:teal, '', '', '')
-call <sid>hi('xmlTagName', s:grey, '', '', '')
-call <sid>hi('xmlEndTag', s:teal, '', '', '')
 
 " startify
 if g:mnd_solarized_profile ==? 'purple'
