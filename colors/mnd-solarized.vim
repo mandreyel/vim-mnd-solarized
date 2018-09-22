@@ -259,6 +259,7 @@ else " default is a mix of purple and orange
     call <sid>hi('Todo', s:dk_orange, s:dk_green, '', '')
 endif
 call <sid>hi('PreProc', s:blue_green, '', '', '')
+" TODO maybe change this to magenta or some more visible color
 call <sid>hi('Special', s:blue_green, '', '', '')
 call <sid>hi('String', s:dk_blue_green, '', '', '')
 call <sid>hi('Structure', s:teal, '', '', '')
@@ -307,11 +308,13 @@ call <sid>hi('cppRawString', s:dk_blue_green, '', '', '')
 " Rust
 call <sid>hi('rustEnumVariant', s:teal, '', '', '')
 call <sid>hi('rustModPath', s:blue_green, '', '', '')
+call <sid>hi('rustLifetime', s:blue_green, '', s:bold, '')
 if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('rustPanic', s:magenta, '', s:bold, '')
     call <sid>hi('rustAssert', s:magenta, '', s:bold, '')
     call <sid>hi('rustSelf', s:purple, '', '', '')
     call <sid>hi('rustModPathSep', s:magenta, '', s:bold, '')
+    call <sid>hi('rustQuestionMark', s:magenta, '', s:bold, '')
     "call <sid>hi('rustRepeat', s:purple, '', s:bold, '')
     "call <sid>hi('rustConditional', s:purple, '', s:bold, '')
     " vim-rust-syntax-patch plugin additions
