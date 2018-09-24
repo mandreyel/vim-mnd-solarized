@@ -80,7 +80,7 @@ let s:dk_blue_green = ['#207f96', '114'] " slightly lighter than above
 let s:blue_green = ['#2592ad', '114']
 "let s:l_blue_green = ['#1c6e82', '114']
 
-let s:dk_orange = ['#cb4b16', '21']
+"let s:dk_orange = ['#cb4b16', '21']
 let s:orange = ['#b58900', '21']
 
 let s:purple = ['#7379d1', '21'] " slightly brighter
@@ -125,8 +125,6 @@ endfunction
 " ---------------------------------------------------------------
 if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('Directory', s:purple, '', '', '')
-elseif g:mnd_solarized_profile ==? 'orange'
-    call <sid>hi('Directory', s:dk_orange, '', '', '')
 else
     call <sid>hi('Directory', s:purple, '', '', '')
 endif
@@ -186,7 +184,7 @@ call <sid>hi('Search', s:teal, s:md_green, s:bold, '')
 if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('IncSearch', s:purple, s:md_green, s:bold, '')
 else
-    call <sid>hi('IncSearch', s:dk_orange, s:md_green, s:bold, '')
+    call <sid>hi('IncSearch', s:orange, s:md_green, s:bold, '')
 endif
 
 " Tabs
@@ -221,22 +219,6 @@ if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('Number', s:magenta, '', s:bold, '')
     call <sid>hi('SpecialChar', s:magenta, '', s:bold, '')
     call <sid>hi('Todo', s:magenta, s:dk_green, '', '')
-elseif g:mnd_solarized_profile ==? 'orange'
-    call <sid>hi('Delimiter', s:orange, '', '', '')
-    call <sid>hi('Conditional', s:orange, '', '', '')
-    call <sid>hi('Repeat', s:orange, '', '', '')
-    call <sid>hi('Keyword', s:orange, '', '', '')
-    call <sid>hi('Label', s:orange, '', '', '')
-    call <sid>hi('Exception', s:orange, '', '', '')
-    call <sid>hi('Statement', s:orange, '', '', '')
-    call <sid>hi('Operator', s:dk_orange, '', s:bold, '')
-    call <sid>hi('StorageClass', s:dk_orange, '', s:bold, '')
-    call <sid>hi('Constant', s:dk_orange, '', '', '')
-    call <sid>hi('Boolean', s:dk_orange, '', '', '')
-    call <sid>hi('Float', s:dk_orange, '', '', '')
-    call <sid>hi('Number', s:dk_orange, '', '', '')
-    call <sid>hi('SpecialChar', s:dk_orange, '', '', '')
-    call <sid>hi('Todo', s:dk_orange, s:dk_green, '', '')
 else " default is a mix of purple and orange
     call <sid>hi('Delimiter', s:orange, '', '', '')
     call <sid>hi('Conditional', s:purple, '', '', '')
@@ -316,10 +298,6 @@ if g:mnd_solarized_profile ==? 'purple'
     " vim-rust-syntax-patch plugin additions
     "call <sid>hi('rustCtrlFlow', s:purple, '', s:bold, '')
     call <sid>hi('rustUnsafeKeyword', s:magenta, '', s:bold, '')
-elseif g:mnd_solarized_profile ==? 'orange'
-    call <sid>hi('rustPanic', s:dk_orange, '', '', '')
-    call <sid>hi('rustAssert', s:dk_orange, '', '', '')
-    call <sid>hi('rustModPathSep', s:dk_orange, '', s:bold, '')
 else
     call <sid>hi('rustPanic', s:orange, '', '', '')
     call <sid>hi('rustAssert', s:orange, '', '', '')
@@ -360,7 +338,7 @@ call <sid>hi('DiffChange', s:grey_green, s:md_green, '', '')
 if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('DiffDelete', s:magenta, s:md_green, s:bold, '')
 else
-    call <sid>hi('DiffDelete', s:dk_orange, s:md_green, s:bold, '')
+    call <sid>hi('DiffDelete', s:orange, s:md_green, s:bold, '')
 endif
 call <sid>hi('DiffText', s:blue, s:md_green, '', '')
 call <sid>hi('DiffAdded', s:white, s:blue_green, '', '')
