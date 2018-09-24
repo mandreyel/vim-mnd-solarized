@@ -85,14 +85,10 @@ let s:orange = ['#b58900', '21']
 
 let s:purple = ['#7379d1', '21'] " slightly brighter
 let s:purple = ['#6c71c4', '21']
-let s:l_magenta = ['#c43090', '21']
+let s:magenta = ['#c43090', '21']
 let s:dk_magenta = ['#ab2a7d', '21']
 let s:dk_magenta = ['#a32877', '21'] " slightly darker
-if g:mnd_solarized_terminal_bold
-    let s:magenta = s:dk_magenta
-else
-    let s:magenta = s:l_magenta
-endif
+let s:pink = ['#c12f6e', '21']
 let s:red_pink = ['#a6285e', '21']
 
 let s:lighter_grey_green = ['#657b83', '08']
@@ -135,8 +131,8 @@ else
     call <sid>hi('Directory', s:purple, '', '', '')
 endif
 call <sid>hi('Debug', s:solarized_white, '', '', '')
-call <sid>hi('Error', s:l_magenta, s:dk_green, '', '')
-call <sid>hi('ErrorMsg', s:l_magenta, s:dk_green, '', '')
+call <sid>hi('Error', s:magenta, s:dk_green, '', '')
+call <sid>hi('ErrorMsg', s:magenta, s:dk_green, '', '')
 call <sid>hi('Italic', '', '', s:italic, '')
 call <sid>hi('Bold', '', '', s:bold, '')
 
@@ -256,7 +252,7 @@ else " default is a mix of purple and orange
     call <sid>hi('Float', s:orange, '', '', '')
     call <sid>hi('Number', s:orange, '', '', '')
     call <sid>hi('SpecialChar', s:orange, '', '', '')
-    call <sid>hi('Todo', s:dk_orange, s:dk_green, '', '')
+    call <sid>hi('Todo', s:orange, s:dk_green, '', '')
 endif
 call <sid>hi('PreProc', s:blue_green, '', '', '')
 " TODO maybe change this to magenta or some more visible color
