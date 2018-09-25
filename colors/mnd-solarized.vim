@@ -137,8 +137,6 @@ call <sid>hi('Bold', '', '', s:bold, '')
 call <sid>hi('Macro', s:teal, '', '', '')
 if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('MatchParen', s:magenta, s:dk_green, '', '')
-elseif g:mnd_solarized_profile ==? 'orange'
-    call <sid>hi('MatchParen', s:orange, s:dk_green, '', '')
 else
     call <sid>hi('MatchParen', s:orange, s:dk_green, '', '')
 endif
@@ -203,14 +201,14 @@ call <sid>hi('Define', s:blue, '', '', '')
 call <sid>hi('Function', s:teal, '', '', '')
 call <sid>hi('Identifier', s:solarized_white, '', '', '')
 call <sid>hi('Include', s:dk_blue_green, '', '', '')
+call <sid>hi('Conditional', s:purple, '', '', '')
+call <sid>hi('Repeat', s:purple, '', '', '')
+call <sid>hi('Keyword', s:purple, '', '', '')
+call <sid>hi('Label', s:purple, '', '', '')
+call <sid>hi('Exception', s:purple, '', '', '')
+call <sid>hi('Statement', s:purple, '', '', '')
 if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('Delimiter', s:magenta, '', '', '')
-    call <sid>hi('Conditional', s:purple, '', '', '')
-    call <sid>hi('Repeat', s:purple, '', '', '')
-    call <sid>hi('Keyword', s:purple, '', '', '')
-    call <sid>hi('Label', s:purple, '', '', '')
-    call <sid>hi('Exception', s:purple, '', '', '')
-    call <sid>hi('Statement', s:purple, '', '', '')
     call <sid>hi('Operator', s:magenta, '', s:bold, '')
     call <sid>hi('StorageClass', s:magenta, '', s:bold, '')
     call <sid>hi('Constant', s:magenta, '', '', '')
@@ -221,12 +219,6 @@ if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('Todo', s:magenta, s:dk_green, '', '')
 else " default is a mix of purple and orange
     call <sid>hi('Delimiter', s:orange, '', '', '')
-    call <sid>hi('Conditional', s:purple, '', '', '')
-    call <sid>hi('Repeat', s:purple, '', '', '')
-    call <sid>hi('Keyword', s:purple, '', '', '')
-    call <sid>hi('Label', s:purple, '', '', '')
-    call <sid>hi('Exception', s:purple, '', '', '')
-    call <sid>hi('Statement', s:purple, '', '', '')
     call <sid>hi('Operator', s:orange, '', s:bold, '')
     call <sid>hi('StorageClass', s:orange, '', s:bold, '')
     call <sid>hi('Constant', s:orange, '', '', '')
@@ -252,34 +244,16 @@ call <sid>hi('SpellRare', '', '', 'undercurl', '')
 
 " C
 call <sid>hi('cIncluded', s:teal, '', '', '')
-if g:mnd_solarized_profile ==? 'purple'
-    " TODO do we need this? it's already set above
-    call <sid>hi('cStorageClass', s:blue_green, '', '', '')
-    call <sid>hi('cOperator', s:purple, '', '', '')
-    call <sid>hi('cPreCondit', s:purple, '', '', '')
-elseif g:mnd_solarized_profile ==? 'orange'
-    call <sid>hi('cOperator', s:orange, '', '', '')
-    call <sid>hi('cPreCondit', s:orange, '', '', '')
-else
-    call <sid>hi('cOperator', s:purple, '', '', '')
-    call <sid>hi('cPreCondit', s:purple, '', '', '')
-endif
+call <sid>hi('cStorageClass', s:blue_green, '', '', '')
+" TODO do we need this? it's already set above
+call <sid>hi('cOperator', s:purple, '', '', '')
+call <sid>hi('cPreCondit', s:purple, '', '', '')
 
 " C++
 call <sid>hi('cppModifier', s:blue_green, '', '', '')
-if g:mnd_solarized_profile ==? 'purple'
-    call <sid>hi('cppCast', s:purple, '', '', '')
-    call <sid>hi('cppOperator', s:purple, '', '', '')
-    call <sid>hi('cppAccess', s:purple, '', '', '')
-elseif g:mnd_solarized_profile ==? 'orange'
-    call <sid>hi('cppCast', s:orange, '', '', '')
-    call <sid>hi('cppOperator', s:orange, '', '', '')
-    call <sid>hi('cppAccess', s:orange, '', '', '')
-else
-    call <sid>hi('cppCast', s:orange, '', '', '')
-    call <sid>hi('cppOperator', s:purple, '', '', '')
-    call <sid>hi('cppAccess', s:purple, '', '', '')
-endif
+call <sid>hi('cppAccess', s:purple, '', '', '')
+call <sid>hi('cppOperator', s:purple, '', '', '')
+call <sid>hi('cppCast', s:teal, '', '', '')
 call <sid>hi('cppStructure', s:teal, '', '', '')
 call <sid>hi('cppRawString', s:dk_blue_green, '', '', '')
 
@@ -302,6 +276,8 @@ else
     call <sid>hi('rustPanic', s:orange, '', '', '')
     call <sid>hi('rustAssert', s:orange, '', '', '')
     call <sid>hi('rustModPathSep', s:orange, '', s:bold, '')
+    call <sid>hi('rustQuestionMark', s:orange, '', s:bold, '')
+    call <sid>hi('rustUnsafeKeyword', s:orange, '', s:bold, '')
 endif
 
 " CSS
@@ -411,8 +387,6 @@ call <sid>hi('GitGutterChangeDelete', s:purple, s:dk_green, s:bold, '')
 " startify
 if g:mnd_solarized_profile ==? 'purple'
     call <sid>hi('StartifyBracket', s:purple, '', '', '')
-elseif g:mnd_solarized_profile ==? 'orange'
-    call <sid>hi('StartifyBracket', s:orange, '', '', '')
 else
     call <sid>hi('StartifyBracket', s:purple, '', '', '')
 endif
