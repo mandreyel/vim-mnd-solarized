@@ -281,8 +281,13 @@ else
 endif
 
 " CSS
-call <sid>hi('csClass', s:orange, '', '', '')
-call <sid>hi('csAttribute', s:orange, '', '', '')
+if g:mnd_solarized_profile ==? 'purple'
+    call <sid>hi('csClass', s:magenta, '', '', '')
+    call <sid>hi('csAttribute', s:magenta, '', '', '')
+else
+    call <sid>hi('csClass', s:orange, '', '', '')
+    call <sid>hi('csAttribute', s:orange, '', '', '')
+endif
 call <sid>hi('csModifier', s:purple, '', '', '')
 call <sid>hi('csType', s:solarized_white, '', '', '')
 call <sid>hi('csUnspecifiedStatement', s:blue, '', '', '')
@@ -296,11 +301,16 @@ call <sid>hi('cssClassName', s:purple, '', '', '')
 call <sid>hi('cssUnitDecorators', s:teal, '', '', '')
 
 " HTML
-call <sid>hi('htmlBold', s:orange, '', '', '')
+if g:mnd_solarized_profile ==? 'purple'
+    call <sid>hi('htmlBold', s:magenta, '', '', '')
+    call <sid>hi('htmlArg', s:magenta, '', '', '')
+else
+    call <sid>hi('htmlBold', s:orange, '', '', '')
+    call <sid>hi('htmlArg', s:orange, '', '', '')
+endif
 call <sid>hi('htmlItalic', s:purple, '', '', '')
 call <sid>hi('htmlTag', s:teal, '', '', '')
 call <sid>hi('htmlEndTag', s:teal, '', '', '')
-call <sid>hi('htmlArg', s:orange, '', '', '')
 call <sid>hi('htmlTagName', s:solarized_white, '', '', '')
 call <sid>hi('htmlString', s:blue_green, '', '', '')
 
@@ -328,8 +338,12 @@ call <sid>hi('gitCommitOverflow', s:solarized_white, '', '', '')
 call <sid>hi('gitCommitSummary', s:blue_green, '', '', '')
 
 " JS
+if g:mnd_solarized_profile ==? 'purple'
+    call <sid>hi('javaScriptNumber', s:magenta, '', '', '')
+else
+    call <sid>hi('javaScriptNumber', s:orange, '', '', '')
+endif
 call <sid>hi('javaScript', s:grey, '', '', '')
-call <sid>hi('javaScriptNumber', s:orange, '', '', '')
 call <sid>hi('javaScriptBraces', s:grey, '', '', '')
 
 " Markdown
@@ -358,17 +372,26 @@ call <sid>hi('pythonRepeat', s:purple, '', '', '')
 call <sid>hi('pythonOperator', s:purple, '', '', '')
 
 " Ruby
-call <sid>hi('rubyConstant', s:orange, '', '', '')
+if g:mnd_solarized_profile ==? 'purple'
+    call <sid>hi('rubyConstant', s:magenta, '', '', '')
+    call <sid>hi('rubyInterpolationDelimiter', s:magenta, '', '', '')
+else
+    call <sid>hi('rubyConstant', s:orange, '', '', '')
+    call <sid>hi('rubyInterpolationDelimiter', s:orange, '', '', '')
+endif
 call <sid>hi('rubySymbol', s:blue_green, '', '', '')
 call <sid>hi('rubyAttribute', s:blue, '', '', '')
 call <sid>hi('rubyInterpolation', s:blue_green, '', '', '')
-call <sid>hi('rubyInterpolationDelimiter', s:orange, '', '', '')
 call <sid>hi('rubyStringDelimiter', s:blue_green, '', '', '')
 call <sid>hi('rubyRegexp', s:teal, '', '', '')
 
 " SASS
+if g:mnd_solarized_profile ==? 'purple'
+    call <sid>hi('sassClassChar', s:magenta, '', '', '')
+else
+    call <sid>hi('sassClassChar', s:orange, '', '', '')
+endif
 call <sid>hi('sassidChar', s:solarized_white, '', '', '')
-call <sid>hi('sassClassChar', s:orange, '', '', '')
 call <sid>hi('sassInclude', s:purple, '', '', '')
 call <sid>hi('sassMixing', s:purple, '', '', '')
 call <sid>hi('sassMixinName', s:blue, '', '', '')
@@ -391,29 +414,29 @@ else
     call <sid>hi('StartifyBracket', s:purple, '', '', '')
 endif
 
-let g:terminal_color_0=s:dk_green[0]
-let g:terminal_color_8=s:dk_green[0]
+let g:terminal_color_0 = s:dk_green[0]
+let g:terminal_color_8 = s:dk_green[0]
 
-let g:terminal_color_1=s:solarized_white[0]
-let g:terminal_color_9=s:solarized_white[0]
+let g:terminal_color_1 = s:solarized_white[0]
+let g:terminal_color_9 = s:solarized_white[0]
 
-let g:terminal_color_2=s:blue_green[0]
-let g:terminal_color_10=s:blue_green[0]
+let g:terminal_color_2 = s:blue_green[0]
+let g:terminal_color_10 = s:blue_green[0]
 
-let g:terminal_color_3=s:orange[0]
-let g:terminal_color_11=s:orange[0]
+let g:terminal_color_3 = s:magenta[0]
+let g:terminal_color_11 = s:magenta[0]
 
-let g:terminal_color_4=s:blue[0]
-let g:terminal_color_12=s:blue[0]
+let g:terminal_color_4 = s:blue[0]
+let g:terminal_color_12 = s:blue[0]
 
-let g:terminal_color_5=s:purple[0]
-let g:terminal_color_13=s:purple[0]
+let g:terminal_color_5 = s:purple[0]
+let g:terminal_color_13 = s:purple[0]
 
-let g:terminal_color_6=s:teal[0]
-let g:terminal_color_14=s:teal[0]
+let g:terminal_color_6 = s:teal[0]
+let g:terminal_color_14 = s:teal[0]
 
-let g:terminal_color_7=s:grey[0]
-let g:terminal_color_15=s:grey[0]
+let g:terminal_color_7 = s:grey[0]
+let g:terminal_color_15 = s:grey[0]
 
 let g:terminal_color_background=s:dk_green[0]
 let g:terminal_color_foreground=s:solarized_white[0]
