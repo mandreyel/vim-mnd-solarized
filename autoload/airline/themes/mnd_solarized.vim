@@ -38,29 +38,35 @@ let s:none = ['NONE', 'NONE']
 
 let g:airline#themes#mnd_solarized#palette = {}
 
+let s:statusbar = [s:dk_green[0], s:grey_green[0], s:dk_green[1], s:grey_green[1]]
+let s:warning = [s:dk_green[0], s:purple[0], s:dk_green[1], s:purple[1]]
+let s:error = [s:dk_green[0], s:red_pink[0], s:dk_green[1], s:red_pink[1]]
+
 let s:normal_main = [s:dk_green[0], s:solarized_white[0], s:dk_green[1], s:solarized_white[1]]
-let s:normal_right = [s:dk_green[0], s:grey_green[0], s:dk_green[1], s:grey_green[1]]
-let s:normal_middle = [s:dk_green[0], s:grey_green[0], s:dk_green[1], s:grey_green[1]]
-let g:airline#themes#mnd_solarized#palette.normal = airline#themes#generate_color_map(s:normal_main, s:normal_right, s:normal_middle)
+let g:airline#themes#mnd_solarized#palette.normal = airline#themes#generate_color_map(s:normal_main, s:statusbar, s:statusbar)
+let g:airline#themes#mnd_solarized#palette.normal.airline_warning = s:warning
+let g:airline#themes#mnd_solarized#palette.normal.airline_error = s:error
 
 let s:insert_main = [s:dk_green[0], s:dk_blue_green[0], s:dk_green[1], s:dk_blue_green[1]]
-let s:insert_right = [s:dk_green[0], s:grey_green[0], s:dk_green[1], s:grey_green[1]]
-let s:insert_middle = [s:dk_green[0], s:grey_green[0], s:dk_green[1], s:grey_green[1]]
-let g:airline#themes#mnd_solarized#palette.insert = airline#themes#generate_color_map(s:insert_main, s:insert_right, s:insert_middle)
+let g:airline#themes#mnd_solarized#palette.insert = airline#themes#generate_color_map(s:insert_main, s:statusbar, s:statusbar)
+let g:airline#themes#mnd_solarized#palette.insert.airline_warning = s:warning
+let g:airline#themes#mnd_solarized#palette.insert.airline_error = s:error
 
-let s:replace_main = [s:dk_green[0], s:magenta[0], s:dk_green[1], s:magenta[1]]
-let s:replace_right = [s:dk_green[0], s:grey_green[0], s:dk_green[1], s:grey_green[1]]
-let s:replace_middle = [s:dk_green[0], s:grey_green[0], s:dk_green[1], s:grey_green[1]]
-let g:airline#themes#mnd_solarized#palette.replace = airline#themes#generate_color_map(s:replace_main, s:replace_right, s:replace_middle)
+let s:replace_main = [s:dk_green[0], s:red_pink[0], s:dk_green[1], s:red_pink[1]]
+let g:airline#themes#mnd_solarized#palette.replace = airline#themes#generate_color_map(s:replace_main, s:statusbar, s:statusbar)
+let g:airline#themes#mnd_solarized#palette.replace.airline_warning = s:warning
+let g:airline#themes#mnd_solarized#palette.replace.airline_error = s:error
 
 let s:visual_main = [s:dk_green[0], s:purple[0], s:dk_green[1], s:purple[1]]
-let s:visual_right = [s:dk_green[0], s:grey_green[0], s:dk_green[1], s:grey_green[1]]
-let s:visual_middle = [s:dk_green[0], s:grey_green[0], s:dk_green[1], s:grey_green[1]]
-let g:airline#themes#mnd_solarized#palette.visual = airline#themes#generate_color_map(s:visual_main, s:visual_right, s:visual_middle)
+let g:airline#themes#mnd_solarized#palette.visual = airline#themes#generate_color_map(s:visual_main, s:statusbar, s:statusbar)
+let g:airline#themes#mnd_solarized#palette.visual.airline_warning = s:warning
+let g:airline#themes#mnd_solarized#palette.visual.airline_error = s:error
 
 let s:inactive_main = [s:grey_green[0], s:md_green[0], s:grey_green[1], s:md_green[1]]
 let s:inactive_right = [s:grey_green[0], s:md_green[0], s:grey_green[1], s:md_green[1]]
 let s:inactive_middle = [s:grey_green[0], s:md_green[0], s:grey_green[1], s:md_green[1]]
 let g:airline#themes#mnd_solarized#palette.inactive = airline#themes#generate_color_map(s:inactive_main, s:inactive_right, s:inactive_middle)
+let g:airline#themes#mnd_solarized#palette.inactive.airline_warning = s:warning
+let g:airline#themes#mnd_solarized#palette.inactive.airline_error = s:error
 
 call airline#parts#define_accent('file', 'bold')
